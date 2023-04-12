@@ -7,14 +7,15 @@
     <title>Password Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="text-slate-400 flex justify-center items-center bg-gray-700 w-screen h-screen">
-    <div id="app" class="flex flex-col lg:flex-row lg:gap-36 justify-between gap-12">
+  <body class="text-slate-400 flex justify-center items-center bg-gray-700 w-screen h-screen mt-36 my-36 lg:my-0">
+    <div id="app" class="flex flex-col items-center lg:flex-row lg:gap-20 justify-between gap-12">
       <div class="left">
         <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800 w-80 h-80 rounded-md drop-shadow-lg">
           <input id="password" placeholder="Password" type="password" class="w-4/5 h-8 p-1 placeholder:italic placeholder:text-slate-400 rounded shadow bg-gray-700 focus-visible:outline-none">
           <button id="encode" class="px-6 py-2 bg-gray-700 rounded-md duration-200 hover:bg-gray-600 hover:text-slate-300">Encode</button>
         </div>
       </div>
+      <img src="./image/arrow.svg" alt="->" class="w-36 rotate-90 lg:rotate-0">
       <div class="right">
         <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800 w-80 h-80 rounded-md drop-shadow-lg">
           <input id="result" placeholder="Encoded" type="password" class="w-4/5 h-8 p-1 placeholder:italic placeholder:text-slate-400 rounded shadow bg-gray-700 focus-visible:outline-none pointer-events-none">
