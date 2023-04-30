@@ -15,11 +15,12 @@ btnEncode.addEventListener('click', () => {
 });
 
 inputPassword.addEventListener('keydown', (event) => {
-  if (event.key === 'Key') {
-    inputResult.value = encode(inputPassword.value);
-  }
+  console.log(event.key)
+  inputResult.value = (event.key === 'Enter') ? encode(inputPassword.value) : inputResult.value;
 });
 
 btnCopy.addEventListener('click', () => {
+  inputResult.select();
+  inputResult.setSelectionRange(0, inputResult.value.length);
   navigator.clipboard.writeText(inputResult.value);
 });
