@@ -6,23 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </head>
-  <body class="text-slate-400 flex justify-center items-center bg-gray-700 w-screen h-screen mt-36 my-36 lg:my-0">
-    <div id="app" class="flex flex-col items-center lg:flex-row lg:gap-20 justify-between gap-12">
-      <div class="left">
-        <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800 w-80 h-80 rounded-md drop-shadow-lg">
+  <body class="flex flex-col h-screen min-h-[600px] justify-center text-slate-400 bg-gray-700">
+    <main class="flex justify-center items-center">
+      <div id="app" class="flex flex-col items-center md:flex-row lg:gap-20 justify-between gap-10">
+        <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800 h-[220px] md:w-[280px] md:h-[280px] rounded-md drop-shadow-lg">
           <input id="password" placeholder="Password" type="password" class="w-4/5 h-8 p-1 placeholder:italic placeholder:text-slate-400 rounded shadow bg-gray-700 focus-visible:outline-none">
           <button id="encode" class="px-6 py-2 bg-gray-700 rounded-md duration-200 hover:bg-gray-600 hover:text-slate-300">Encode</button>
         </div>
-      </div>
-      <img src="./image/arrow.svg" alt="->" class="w-36 rotate-90 lg:rotate-0">
-      <div class="right">
-        <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800 w-80 h-80 rounded-md drop-shadow-lg">
+        <div class="flex flex-col items-center justify-center">
+          <button id="encode" data-bs-toggle="modal" data-bs-target="#menu" class="px-6 py-2 bg-gray-800 rounded-md duration-200 hover:bg-gray-600 hover:text-slate-300">Configurations</button>
+          <img src="./image/arrow.svg" alt="->" class="w-20 rotate-90 lg:rotate-0">
+        </div>
+        <div class="flex flex-col gap-y-3 justify-center items-center bg-gray-800  h-[200px] md:w-[280px] md:h-[280px]  rounded-md drop-shadow-lg">
           <input id="result" placeholder="Encoded" type="password" class="w-4/5 h-8 p-1 placeholder:italic placeholder:text-slate-400 rounded shadow bg-gray-700 focus-visible:outline-none pointer-events-none">
           <button id="copy" class="px-6 py-2 bg-gray-700 rounded-md duration-200 hover:bg-gray-600 hover:text-slate-300">Copy</button>
         </div>
       </div>
-    </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-gray-700">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Configurações</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="w-50 mx-auto">
+              <div class="form-check form-switch justify-self-start">
+                <input class="form-check-input" type="checkbox" role="switch" id="base64">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Base64 Encode</label>
+              </div>
+              <div class="form-check form-switch justify-self-start">
+                <input class="form-check-input" type="checkbox" role="switch" id="special_characters">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Special characters</label>
+              </div>
+              <div class="form-check form-switch justify-self-start">
+                <input class="form-check-input" type="checkbox" role="switch" id="capital_letters">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Capital Letters</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="save" class="px-6 py-2 bg-gray-800 rounded-md duration-200 hover:bg-gray-600 hover:text-slate-300" data-bs-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>  
   </body>
   <script src="./js/script.js"></script>
 </html>
