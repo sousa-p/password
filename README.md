@@ -2,8 +2,6 @@
 
 Password Encoder using JS, Tailwind CSS and Bootstrap
 
-URL: https://sousa-p.github.io/password/
-
 ## Desktop
 
 ![image](https://user-images.githubusercontent.com/97417230/231593533-9cc7bda6-d0c2-4fba-a13a-2a8e634392f1.png)
